@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.gson)
     testImplementation(libs.junit)
+    testImplementation(libs.mockwebserver)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

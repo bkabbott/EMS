@@ -20,6 +20,7 @@ import com.effinghamministorage.network.AuthResponse;
 import com.effinghamministorage.network.AuthenticateRequest;
 import com.effinghamministorage.network.GetPinRequest;
 import com.effinghamministorage.storage.TokenManager;
+import com.effinghamministorage.util.PhoneNumberUtils;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -89,21 +90,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (isFormatting) return;
                 isFormatting = true;
 
-                String digits = stripPhone(s.toString());
-                String formatted;
-
-                if (digits.length() == 0) {
-                    formatted = "";
-                } else if (digits.length() <= 3) {
-                    formatted = "(" + digits;
-                } else if (digits.length() <= 6) {
-                    formatted = "(" + digits.substring(0, 3) + ") " + digits.substring(3);
-                } else {
-                    String area = digits.substring(0, 3);
-                    String prefix = digits.substring(3, 6);
-                    String line = digits.substring(6, Math.min(digits.length(), 10));
-                    formatted = "(" + area + ") " + prefix + "-" + line;
-                }
+                String digits = PhoneNumberUtils.stripPhone(s.toString());
+                String formatted = PhoneNumberUtils.formatUsPhone(digits);
 
                 s.replace(0, s.length(), formatted);
                 isFormatting = false;
@@ -112,8 +100,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void requestPin() {
-        String digits = stripPhone(phoneEditText.getText().toString());
-        if (!isValidPhone(digits)) {
+        String digits = PhoneNumberUtils.stripPhone(phoneEditText.getText().toString());
+        if (!PhoneNumberUtils.isValidPhone(digits)) {
             showError(getString(R.string.error_invalid_phone));
             return;
         }
@@ -147,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        String digits = stripPhone(phoneEditText.getText().toString());
+        String digits = PhoneNumberUtils.stripPhone(phoneEditText.getText().toString());
         setLoading(true);
         AuthenticateRequest request = new AuthenticateRequest(digits, pin);
         ApiClient.getInstance().authenticate(request).enqueue(new Callback<AuthResponse>() {
@@ -193,14 +181,6 @@ public class LoginActivity extends AppCompatActivity {
     private void clearError() {
         errorText.setVisibility(View.GONE);
         errorText.setText("");
-    }
-
-    private String stripPhone(String formatted) {
-        return formatted.replaceAll("\\D", "");
-    }
-
-    private boolean isValidPhone(String digits) {
-        return digits.length() == 10;
     }
 
     private String parseErrorMessage(Response<AuthResponse> response) {
