@@ -5,4 +5,16 @@
     <string name="address">1262 N. Columbia Ave., Rincon, GA 31326</string>
     <string name="phone">912-826-4903</string>
     <string name="serving_since">Serving Effingham County for over 30 years</string>
+    <string name="login_title">Tenant Login</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="pin_hint">Enter PIN</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="login">Login</string>
+    <string name="phone_prefix">+1</string>
+    <string name="error_invalid_phone">Please enter a valid 10-digit US phone number.</string>
+    <string name="error_empty_pin">Please enter the PIN sent to your phone.</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="pin_sent_success">PIN sent to your phone.</string>
+    <string name="login_success">Login successful!</string>
 </resources>

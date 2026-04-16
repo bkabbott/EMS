@@ -2,6 +2,7 @@ package com.effinghamministorage;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         animateSplash();
+
+        MaterialButton loginButton = findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void animateSplash() {
