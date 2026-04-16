@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EMS</string>
+    <string name="business_name">Effingham Mini Storage</string>
+    <string name="tagline">Affordable Storage Units</string>
+    <string name="address">1262 N. Columbia Ave., Rincon, GA 31326</string>
+    <string name="phone">912-826-4903</string>
+    <string name="serving_since">Serving Effingham County for over 30 years</string>
+</resources>

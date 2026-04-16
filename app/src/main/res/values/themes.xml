@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EMS" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ems_charcoal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/ems_dark_gray</item>
+        <item name="colorSecondary">@color/ems_accent</item>
+        <item name="android:statusBarColor">@color/ems_charcoal</item>
+        <item name="android:navigationBarColor">@color/ems_charcoal</item>
+    </style>
+
+    <style name="Theme.EMS" parent="Base.Theme.EMS" />
+
+    <!-- Splash screen specific theme -->
+    <style name="Theme.EMS.Splash" parent="Base.Theme.EMS">
+        <item name="android:windowBackground">@color/ems_charcoal</item>
+        <item name="android:statusBarColor">@color/ems_charcoal</item>
+        <item name="android:navigationBarColor">@color/ems_charcoal</item>
+    </style>
+</resources>
