@@ -48,6 +48,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginTitle" />
 
+    <!-- Phone Number Label -->
+    <TextView
+        android:id="@+id/phoneLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05"
+        android:text="@string/phone_hint"
+        android:textColor="@color/ems_light_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginAccent" />
+
     <!-- Phone input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneInputLayout"
@@ -55,7 +72,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         app:boxStrokeColor="@color/ems_accent"
         app:hintTextColor="@color/ems_accent"
@@ -63,7 +80,7 @@
         app:prefixTextColor="@color/ems_light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginAccent">
+        app:layout_constraintTop_toBottomOf="@id/phoneLabel">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phoneEditText"
@@ -73,7 +90,7 @@
             android:inputType="phone"
             android:maxLength="14"
             android:textColor="@color/white"
-            android:textColorHint="@color/ems_medium_gray" />
+            android:textColorHint="@color/ems_light_gray" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Error text -->
@@ -118,7 +135,7 @@
             android:inputType="number"
             android:maxLength="6"
             android:textColor="@color/white"
-            android:textColorHint="@color/ems_medium_gray" />
+            android:textColorHint="@color/ems_light_gray" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Action button -->

@@ -57,7 +57,7 @@
         android:fontFamily="sans-serif-light"
         android:letterSpacing="0.08"
         android:text="@string/tagline"
-        android:textColor="@color/ems_medium_gray"
+        android:textColor="@color/ems_light_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +191,7 @@
             android:fontFamily="sans-serif-light"
             android:letterSpacing="0.05"
             android:text="@string/serving_since"
-            android:textColor="@color/ems_medium_gray"
+            android:textColor="@color/ems_light_gray"
             android:textSize="12sp" />
 
         <!-- Address -->
