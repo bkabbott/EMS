@@ -17,4 +17,35 @@
     <string name="error_generic">Something went wrong. Please try again.</string>
     <string name="pin_sent_success">PIN sent to your phone.</string>
     <string name="login_success">Login successful!</string>
+    <string name="dashboard_title">My Rentals</string>
+    <string name="category_indoor_storage">Indoor Storage Units</string>
+    <string name="category_camper_boat">Camper and Boat Spaces</string>
+    <string name="category_rv">RV Spaces</string>
+    <string name="logout">Logout</string>
+    <string name="error_session_expired">Session expired. Please log in again.</string>
+    <string name="error_loading_rentals">Could not load rental information.</string>
+    <string name="open_keybox">Open Keybox</string>
+    <string name="keybox_opened">Keybox opened!</string>
+    <string name="keybox_opening">Opening…</string>
+    <string name="keybox_failed">Failed to open keybox</string>
+    <string name="bluetooth_permission_required">Bluetooth permission is required to open the keybox.</string>
+
+    <!-- Unit Selection -->
+    <string name="rent_a_unit">Rent a Unit</string>
+    <string name="select_a_unit">Select a Unit</string>
+    <string name="indoor_storage">Indoor Storage</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="size_5x5">5 x 5</string>
+    <string name="size_10x10">10 x 10</string>
+    <string name="size_10x15">10 x 15</string>
+    <string name="size_10x20">10 x 20</string>
+    <string name="confirm_rental">Confirm Rental</string>
+
+    <!-- Unit Access -->
+    <string name="your_unit">Your Unit</string>
+    <string name="send_access_pin">Send Access PIN</string>
+    <string name="pin_sending">Sending\u2026</string>
+    <string name="pin_sent_sms">Access PIN sent to your phone via SMS!</string>
+    <string name="pin_send_failed">Failed to send PIN. Please try again.</string>
+    <string name="phone_not_found">Phone number not found. Please log out and log in again.</string>
 </resources>

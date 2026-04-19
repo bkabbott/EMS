@@ -10,6 +10,8 @@ constraintlayout = "2.2.1"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 gson = "2.11.0"
+securityCrypto = "1.1.0-alpha06"
+iglooAccessSdk = "1.1.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,6 +27,8 @@ okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
+security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
+igloo-access-sdk = { group = "co.igloo.access", name = "sdk", version.ref = "iglooAccessSdk" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

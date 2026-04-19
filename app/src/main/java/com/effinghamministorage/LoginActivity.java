@@ -1,5 +1,6 @@
 package com.effinghamministorage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -145,8 +146,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null
                         && response.body().isSuccess() && response.body().getToken() != null) {
                     TokenManager.saveToken(LoginActivity.this, response.body().getToken());
+                    String phoneDigits = PhoneNumberUtils.stripPhone(phoneEditText.getText().toString());
+                    TokenManager.savePhone(LoginActivity.this, PhoneNumberUtils.toE164(phoneDigits));
                     Toast.makeText(LoginActivity.this, R.string.login_success, Toast.LENGTH_SHORT).show();
-                    finish();
+                    Intent dashboardIntent = new Intent(LoginActivity.this, DashboardActivity.class);
+                    dashboardIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(dashboardIntent);
                 } else {
                     showError(parseErrorMessage(response));
                 }

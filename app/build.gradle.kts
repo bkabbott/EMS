@@ -1,5 +1,12 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+}
+
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) load(f.inputStream())
 }
 
 android {
@@ -18,6 +25,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "LOCKBOX_API_KEY",
+            "\"${localProps.getProperty("lockbox.api.key", "")}\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -45,6 +59,8 @@ dependencies {
     implementation(libs.okhttp.core)
     implementation(libs.okhttp.logging)
     implementation(libs.gson)
+    implementation(libs.security.crypto)
+    implementation(libs.igloo.access.sdk)
     testImplementation(libs.junit)
     testImplementation(libs.mockwebserver)
     androidTestImplementation(libs.ext.junit)

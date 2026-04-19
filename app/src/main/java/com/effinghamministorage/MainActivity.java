@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.effinghamministorage.storage.TokenManager;
 import com.google.android.material.button.MaterialButton;
 
 import androidx.activity.EdgeToEdge;
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        if (TokenManager.isLoggedIn(this)) {
+            Intent dashboardIntent = new Intent(this, DashboardActivity.class);
+            startActivity(dashboardIntent);
+            finish();
+            return;
+        }
 
         animateSplash();
 

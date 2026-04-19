@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".EmsApplication"
         android:theme="@style/Theme.EMS"
         android:usesCleartextTraffic="true">
         <activity
@@ -24,6 +28,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".UnitSelectionActivity" />
+        <activity android:name=".UnitAccessActivity" />
+        <service android:name="co.igloo.access.sdk.connection.LockConnectionService" android:exported="false" />
     </application>
 
 </manifest>
